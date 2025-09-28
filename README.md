@@ -1,3 +1,14 @@
+## Screenshots
+
+Here are some screenshots showing the CRSF driver in action:
+
+<img src="https://raw.githubusercontent.com/kenken64/circuitpython-CRSF/main/screens/PXL_20250928_190637592.jpg" alt="CRSF Channel Output 1" width="600">
+<img src="https://raw.githubusercontent.com/kenken64/circuitpython-CRSF/main/screens/PXL_20250928_190659262.jpg" alt="CRSF Channel Output 2" width="600">
+<img src="https://raw.githubusercontent.com/kenken64/circuitpython-CRSF/main/screens/PXL_20250928_190714103.jpg" alt="CRSF Channel Output 3" width="600">
+<img src="https://raw.githubusercontent.com/kenken64/circuitpython-CRSF/main/screens/PXL_20250928_191256022.jpg" alt="CRSF Channel Output 4" width="600">
+<img src="https://raw.githubusercontent.com/kenken64/circuitpython-CRSF/main/screens/Screenshot%20From%202025-09-29%2003-32-23.png" alt="Serial Console Output" width="600">
+
+
 # MicroPython & CircuitPython CRSF Driver
 
 A pure-Python port of the AlfredoCRSF C++ library tailored for RP2040-based boards running MicroPython or CircuitPython. The driver speaks the Team BlackSheep Crossfire (CRSF) protocol over UART and mirrors the behaviour of the original implementation while staying friendly to both firmware families.
@@ -71,16 +82,6 @@ uart = UART(1, baudrate=BAUD_RATE, tx=Pin(4), rx=Pin(5))
 crsf = CRSF(uart)
 ```
 ```
-
-## Screenshots
-
-Here are some screenshots showing the CRSF driver in action:
-
-<img src="https://raw.githubusercontent.com/kenken64/circuitpython-CRSF/main/screens/PXL_20250928_190637592.jpg" alt="CRSF Channel Output 1" width="600">
-<img src="https://raw.githubusercontent.com/kenken64/circuitpython-CRSF/main/screens/PXL_20250928_190659262.jpg" alt="CRSF Channel Output 2" width="600">
-<img src="https://raw.githubusercontent.com/kenken64/circuitpython-CRSF/main/screens/PXL_20250928_190714103.jpg" alt="CRSF Channel Output 3" width="600">
-<img src="https://raw.githubusercontent.com/kenken64/circuitpython-CRSF/main/screens/PXL_20250928_191256022.jpg" alt="CRSF Channel Output 4" width="600">
-<img src="https://raw.githubusercontent.com/kenken64/circuitpython-CRSF/main/screens/Screenshot%20From%202025-09-29%2003-32-23.png" alt="Serial Console Output" width="600">
 
 ## Telemetry helpers
 
