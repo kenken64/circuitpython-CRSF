@@ -14,10 +14,10 @@ A pure-Python port of the AlfredoCRSF C++ library tailored for RP2040-based boar
 
 ## Installation
 
-Copy the `crsf` package to your board:
+Copy the `lib/crsf` package to your board's `lib/` directory:
 
-- **MicroPython** – `mpremote fs cp -r crsf :`
-- **CircuitPython** – mount the `CIRCUITPY` USB drive and copy the `crsf` folder (or use `circup`/`adafruit-ampy`).
+- **MicroPython** – `mpremote fs cp -r lib/crsf :lib/`
+- **CircuitPython** – mount the `CIRCUITPY` USB drive and copy the `lib/crsf` folder to `CIRCUITPY/lib/` (or use `circup`/`adafruit-ampy`).
 
 The module also runs under CPython for development and unit testing.
 
@@ -88,17 +88,6 @@ crsf.telem_set_custom_payload(b"FW:v1.2.3")
 
 # Telemetry frames are sent the next time process_frames() runs
 ```
-
-## Optional HTTP dashboard (MicroPython + Wi-Fi)
-
-`main.py` now ships with an optional web dashboard that publishes the first ten RC channels in real-time. To use it:
-
-1. Flash a MicroPython build onto Wi-Fi capable hardware (for example, Pico W or ESP32).
-2. In `main.py`, set `USE_HTTP_DASHBOARD = True` and fill in the `WIFI_SSID`/`WIFI_PASSWORD` values.
-3. Deploy `code.py` (renamed `main.py`) alongside the `crsf` package, then reset the board.
-4. Watch the serial console for `HTTP dashboard available at http://<ip>/` and open that address in a browser.
-
-The homepage renders a lightweight table that auto-refreshes via JavaScript, and `/data` exposes the latest readings as JSON for integrations. If Wi-Fi or `asyncio` support isn't present, the firmware automatically falls back to the serial-only loop.
 
 ## Development & testing
 
