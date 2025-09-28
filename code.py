@@ -31,6 +31,11 @@ def _timestamp_label() -> str:
 crsf = CRSF(uart)
 
 
+# Shared state for telemetry presentation
+latest_channels_us = [0.0] * 10
+latest_channels_timestamp = "never"
+
+
 # Callback handlers -------------------------------------------------------------
 def on_channels(channels):
     # Render the first ten RC channels (or fewer if not provided) in microseconds
@@ -77,11 +82,6 @@ crsf.telem_set_battery_data(
 
 # Optional: send a short custom payload
 crsf.telem_set_custom_payload(b"Pico2 Demo")
-
-
-# Shared state for telemetry presentation
-latest_channels_us = [0.0] * 10
-latest_channels_timestamp = "never"
 
 
 # Main loop --------------------------------------------------------------
