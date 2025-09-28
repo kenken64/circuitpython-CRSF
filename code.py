@@ -34,12 +34,18 @@ crsf = CRSF(uart)
 # Shared state for telemetry presentation
 latest_channels_us = [0.0] * 10
 latest_channels_timestamp = "never"
+callback_count = 0
 
 
 # Callback handlers -------------------------------------------------------------
 def on_channels(channels):
+    global latest_channels_timestamp, callback_count
+    callback_count += 1
+
+    # Debug: print callback invocation
+    print(f"Callback #{callback_count} - Received {len(channels)} channels")
+
     # Render the first ten RC channels (or fewer if not provided) in microseconds
-    global latest_channels_timestamp
     count = min(10, len(channels))
     report = []
     for idx in range(count):
@@ -85,6 +91,13 @@ crsf.telem_set_custom_payload(b"Pico2 Demo")
 
 
 # Main loop --------------------------------------------------------------
+loop_count = 0
 while True:
+    loop_count += 1
     crsf.process_frames()
+
+    # Print status every 100 loops (about every 0.5 seconds)
+    if loop_count % 100 == 0:
+        print(f"Main loop running... callbacks: {callback_count}")
+
     _sleep_ms(5)
