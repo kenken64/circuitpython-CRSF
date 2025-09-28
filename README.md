@@ -72,6 +72,16 @@ crsf = CRSF(uart)
 ```
 ```
 
+## Screenshots
+
+Here are some screenshots showing the CRSF driver in action:
+
+![CRSF Channel Output 1](screens/PXL_20250928_190637592.jpg)
+![CRSF Channel Output 2](screens/PXL_20250928_190659262.jpg)
+![CRSF Channel Output 3](screens/PXL_20250928_190714103.jpg)
+![CRSF Channel Output 4](screens/PXL_20250928_191256022.jpg)
+![Serial Console Output](screens/Screenshot%20From%202025-09-29%2003-32-23.png)
+
 ## Telemetry helpers
 
 ```python
